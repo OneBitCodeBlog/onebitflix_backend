@@ -17,12 +17,14 @@
     "bcrypt": "~5.0.1",
     "express": "~4.17.2",
     "express-formidable": "~1.2.0",
+    "jsonwebtoken": "~8.5.1",
     "pg": "~8.7.1",
     "sequelize": "~6.13.0"
   },
   "devDependencies": {
     "@types/bcrypt": "~5.0.0",
     "@types/express": "~4.17.13",
+    "@types/jsonwebtoken": "^8.5.8",
     "@types/node": "~17.0.10",
     "sequelize-cli": "~6.4.1",
     "ts-node-dev": "~1.1.8",
