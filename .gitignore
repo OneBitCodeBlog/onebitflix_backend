@@ -2,3 +2,6 @@
 node_modules/
 uploads/videos/
 public/thumbnails
+
+.env*
+!.env.example
