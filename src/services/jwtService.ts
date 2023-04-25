@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
-import { JWT_KEY } from '../../config/environment'
+import { JWT_KEY } from '../config/environment'
 
 export const jwtService = {
   signToken: (payload: string | object | Buffer, expiration: string) => {
