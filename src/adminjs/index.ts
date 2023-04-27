@@ -7,6 +7,13 @@ import { locale } from "./locale";
 import { dashboardOptions } from "./dashboard";
 import { brandingOptions } from "./branding";
 import { authenticationOptions } from "./authentication";
+import session from "express-session"
+import connectSession from "connect-session-sequelize"
+import { ADMINJS_COOKIE_PASSWORD } from "../config/environment";
+
+const SequelizeStore = connectSession(session.Store)
+const store = new SequelizeStore({ db: sequelize })
+store.sync()
 
 AdminJS.registerAdapter(AdminJSSequelize)
 
@@ -25,6 +32,8 @@ export const adminJsRouter = AdminJSExpress.buildAuthenticatedRouter(
     null,
     {
         resave: false,
-        saveUninitialized: false
+        saveUninitialized: false,
+        store: store,
+        secret: ADMINJS_COOKIE_PASSWORD
     }
 )
